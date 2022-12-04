@@ -27,8 +27,8 @@ export default function Signup() {
             password: data.password,
         }
         axios.post('https://comp3123-assignment-101277841.herokuapp.com/user/add', signup)
-            .then(res => navigate('/view'))
-            .catch(function(error){
+            .then(res => navigate('/login'))
+            .catch(function (error) {
                 setError("Username already exists")
             })
     }
@@ -49,10 +49,10 @@ export default function Signup() {
             <div className="divmid">
                 <div className="inside">
                     <div className="divBody">
-                    <h2 style={{fontWeight:'bold'}}>Sign Up</h2>
+                        <h2 style={{ fontWeight: 'bold' }}>Sign Up</h2>
                         <section className="divbox">
                             <Form>
-                            <Form.Group className="mb-3">
+                                <Form.Group className="mb-3">
                                     <Form.Label>First Name</Form.Label>
                                     <Form.Control type="text" name='first_name' placeholder="Enter First Name" value={data.first_name} onChange={event => onValueChanged(event)} />
                                 </Form.Group>
@@ -68,7 +68,7 @@ export default function Signup() {
                                     <Form.Label>Password</Form.Label>
                                     <Form.Control type="password" name='password' placeholder="Enter Password" value={data.password} onChange={event => onValueChanged(event)} />
                                 </Form.Group>
-                                <h2 style={{color: 'red', fontWeight: 'bold'}}>{error}</h2>
+                                <h2 style={{ color: 'red', fontWeight: 'bold' }}>{error}</h2>
                                 <Link to='/view'>
                                     <Button variant="primary" size="lg" type='submit' onClick={addUser}>Sign Up</Button>
                                 </Link>

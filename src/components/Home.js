@@ -9,8 +9,8 @@ export default function Home() {
             <br />
             <div className="divmid">
                 <div className="hero">
-                    <h2 style={{color: '#fdfdfd', fontSize: '6em'}}>hello there.</h2>
-                    <h3 style={{color: '#fdfdfd'}}>Employee Management App</h3>
+                    <h2 style={{ color: '#fdfdfd', fontSize: '6em' }}>hello there.</h2>
+                    <h3 style={{ color: '#fdfdfd' }}>Employee Management App</h3>
                 </div>
                 <div className="heroCap">
                     <h2>Select an option to continue</h2>

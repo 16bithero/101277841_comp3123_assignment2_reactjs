@@ -11,6 +11,8 @@ export default function EmpView() {
 
     let navigate = useNavigate();
     const [data, setData] = useState([]);
+    const [userLog, setUser] = useState('')
+
 
     const deleteEmployee = (id) => {
         axios.delete(`https://comp3123-assignment-101277841.herokuapp.com/employees/delete/${id}`)
@@ -29,8 +31,8 @@ export default function EmpView() {
     };
 
     const passData = (data) => {
-        console.log(data);
-        let { _id, first_name, last_name, email } = data
+        let { _id, first_name, last_name, email, username } = data
+        localStorage.setItem('username', username)
         localStorage.setItem('_id', _id)
         localStorage.setItem('First name', first_name)
         localStorage.setItem('Last name', last_name)
@@ -39,6 +41,7 @@ export default function EmpView() {
 
     useEffect(() => {
         getProductData();
+        setUser(localStorage.getItem('username'));
     }, []);
 
     return (
@@ -48,7 +51,7 @@ export default function EmpView() {
             <div className="divmid">
                 <div className="inside">
                     <div className="divBody">
-                        <h2 style={{fontWeight:'bold'}}>Employee List</h2>
+                        <h2 style={{ fontWeight: 'bold' }}>Employee List</h2>
                         <section className="divbox">
                             <Table striped bordered hover>
                                 <tbody>

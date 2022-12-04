@@ -12,6 +12,11 @@ export default function Login() {
         password: ""
     }
 
+    const passData = (data) => {
+        let { username } = data
+        localStorage.setItem('username', username)
+    }
+
     let navigate = useNavigate();
     const [data, setData] = useState('')
     const [error, setError] = useState('')
@@ -24,7 +29,9 @@ export default function Login() {
         }
         axios.post('https://comp3123-assignment-101277841.herokuapp.com/user/login', login)
             .then(res => navigate('/view'))
-            .catch(function(error){
+            .then(res => navigate(0))
+            .then(passData(data.username))
+            .catch(function (error) {
                 console.log(error)
                 setError("Invalid Credentials")
             })
@@ -43,9 +50,9 @@ export default function Login() {
             <div className="divmid">
                 <div className="inside">
                     <div className="divBody">
-                    <h2 style={{fontWeight:'bold'}}>Log In</h2>
+                        <h2 style={{ fontWeight: 'bold' }}>Log In</h2>
                         <section className="divbox">
-                            <Form>
+                            <Form onSubmit={userLogin}>
                                 <Form.Group className="mb-3">
                                     <Form.Label>Username</Form.Label>
                                     <Form.Control type="text" name='username' placeholder="Enter First Name" value={data.username} onChange={event => onValueChanged(event)} />
@@ -54,9 +61,9 @@ export default function Login() {
                                     <Form.Label>Password</Form.Label>
                                     <Form.Control type="password" name='password' placeholder="Enter Last Name" value={data.password} onChange={event => onValueChanged(event)} />
                                 </Form.Group>
-                                <h2 style={{color: 'red', fontWeight: 'bold', textAlign: 'center'}}>{error}</h2>
+                                <h2 style={{ color: 'red', fontWeight: 'bold', textAlign: 'center' }}>{error}</h2>
                                 <a href='/view'>
-                                <Button variant="primary" size="lg" onClick={userLogin}>Log In</Button>
+                                    <Button variant="primary" size="lg" type='submit'>Log In</Button>
                                 </a>
                             </Form>
                         </section>

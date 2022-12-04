@@ -20,10 +20,6 @@ export default function Update() {
         setEmail(localStorage.getItem('email'))
     }, []);
 
-
-
-
-
     const updateEmployee = async (event) => {
         event.preventDefault()
         const id = eid

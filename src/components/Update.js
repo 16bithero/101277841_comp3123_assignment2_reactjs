@@ -7,7 +7,6 @@ import { BrowserRouter, Route, Routes, NavLink, Link, useNavigate } from 'react-
 
 export default function Update() {
 
-
     let navigate = useNavigate();
     const [eid, setID] = useState('')
     const [first_name, setFname] = useState('')
@@ -36,39 +35,35 @@ export default function Update() {
         axios.put(`https://comp3123-assignment-101277841.herokuapp.com/employees/update/${id}`, inputEmp)
             .then(res => navigate('/view'))
     }
-    
+
     return (
         <>
             <br />
             <br />
-            <br />
-            <br />
-            <br />
-            <br />
             <div className="divmid">
-            <div className="inside">
-                <div className="divBody">
-                    <br />
-                    <section className="divbox">
-                        <Form>
-                            <Form.Group className="mb-3">
-                                <Form.Label>First Name</Form.Label>
-                                <Form.Control type="text" name='first_name' placeholder="Enter First Name" value={first_name} onChange={event => setFname(event.target.value)} />
-                            </Form.Group>
-                            <Form.Group className="mb-3">
-                                <Form.Label>Last Name</Form.Label>
-                                <Form.Control type="text" name='last_name' placeholder="Enter Last Name" value={last_name} onChange={event => setLname(event.target.value)} />
-                            </Form.Group>
-                            <Form.Group className="mb-3">
-                                <Form.Label>Email</Form.Label>
-                                <Form.Control type="email" name='email' placeholder="Enter Email" value={email} onChange={(event) => setEmail(event.target.value)} />
-                            </Form.Group>
-                            <Link to='/view'>
-                                <Button variant="primary" size="lg" type='submit' onClick={updateEmployee}>Update Employee</Button>
-                            </Link>
-                        </Form>
-                    </section>
-                </div>
+                <div className="inside">
+                    <div className="divBody">
+                        <h2 style={{ fontWeight: 'bold' }}>Update Employee</h2>
+                        <section className="divbox">
+                            <Form>
+                                <Form.Group className="mb-3">
+                                    <Form.Label>First Name</Form.Label>
+                                    <Form.Control type="text" name='first_name' placeholder="Enter First Name" value={first_name} onChange={event => setFname(event.target.value)} />
+                                </Form.Group>
+                                <Form.Group className="mb-3">
+                                    <Form.Label>Last Name</Form.Label>
+                                    <Form.Control type="text" name='last_name' placeholder="Enter Last Name" value={last_name} onChange={event => setLname(event.target.value)} />
+                                </Form.Group>
+                                <Form.Group className="mb-3">
+                                    <Form.Label>Email</Form.Label>
+                                    <Form.Control type="email" name='email' placeholder="Enter Email" value={email} onChange={(event) => setEmail(event.target.value)} />
+                                </Form.Group>
+                                <Link to='/view'>
+                                    <Button variant="primary" size="lg" type='submit' onClick={updateEmployee}>Update Employee</Button>
+                                </Link>
+                            </Form>
+                        </section>
+                    </div>
                 </div>
             </div>
         </>

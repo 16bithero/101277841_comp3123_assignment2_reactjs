@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(to bottom right, #ffffff, #c4c9fa);
+  height: 100vh;
 }
 
 code {
@@ -15,6 +17,7 @@ code {
 
 /* Sets the background color and typeface of the website */
 html {
+  background-image: linear-gradient(to bottom right, #ed8dad, #7582cc);
   font-family: Helvetica, sans-serif, Arial;
 }
 
@@ -117,13 +120,12 @@ ul.square {
 
 /* Font customization */
 h1, a, a:visited {
-  color: #414044;
+  color: #f1f1f1;
   font-weight: bold;
-  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.19);
 }
 
 a:link {
-  color: #414044;
+  color: #f1f1f1;
 }
 
 a.normal {
@@ -134,13 +136,10 @@ a.normal {
 
 p, h2, h3 {
   margin: 10px;
+  padding-bottom: 10px;
   line-height: 150%;
-  color: #414044;
 }
 
-h1, h2, strong, th, dt {
-  color: #3f4584;
-}
 
 /* Formats the buttons used in html */
 .button{
@@ -174,8 +173,8 @@ h1, h2, strong, th, dt {
 
 /* Formats the body content */
 .divmid { /* Centers the content and encloses them in a box */
-  width: 50%;
-  height: 60vh;
+  width: 70%;
+  height: 75vh;
   margin: auto;
   border-radius: 40px;
   overflow: hidden; /* hides the scrollbar */
@@ -184,13 +183,14 @@ h1, h2, strong, th, dt {
 }
 
 .inside { /* This div is inside divmid so the scrollbar won't overlap the outer box. */
-  height: 60vh;
+  height: 75vh;
   overflow: auto;
-  background-color: #fefefe;
+  background-image: linear-gradient(to top left, #ffffff, #edefff);
   background-size: cover;
 }
 
 .divBody {
+  background-image: linear-gradient(to top left, #ffffff, #edefff);
   margin: auto;
   padding: 25px;
   height: 100%;
@@ -226,7 +226,6 @@ hr {
   background-color: #414044;
   border: 0 none;
   height: 3px;
-  width: 75%;
   margin: auto;
 }
 /* Adjusts the margin on resume.html page */
@@ -303,7 +302,6 @@ label{
 }
 
 Button, input[type="submit"] {
-  background-color: #ff4a57;
   color: white;
   font-weight: bold;
   padding: 16px 20px;
@@ -313,4 +311,8 @@ Button, input[type="submit"] {
   width: 100%;
   opacity: 0.9;
   border-radius: 1em;
+}
+
+.color-nav {
+  background-color: #3f4584;
 }

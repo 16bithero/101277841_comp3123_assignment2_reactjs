@@ -45,14 +45,10 @@ export default function EmpView() {
         <>
             <br />
             <br />
-            <br />
-            <br />
-            <br />
-            <br />
             <div className="divmid">
                 <div className="inside">
                     <div className="divBody">
-                        <br />
+                        <h2 style={{fontWeight:'bold'}}>Employee List</h2>
                         <section className="divbox">
                             <Table striped bordered hover>
                                 <tbody>
@@ -60,7 +56,7 @@ export default function EmpView() {
                                         <th>First Name</th>
                                         <th>Last Name</th>
                                         <th>Email</th>
-                                        <th colSpan={2}>Actions</th>
+                                        <th colSpan={3}>Actions</th>
                                     </tr>
                                     {data.map((item, index) => (
                                         <tr key={index}>
@@ -68,8 +64,14 @@ export default function EmpView() {
                                             <td>{item.last_name}</td>
                                             <td>{item.email}</td>
                                             <td>
+                                                <Link to='/single'>
+                                                    <Button variant='info' onClick={() => passData(item)}>View</Button>
+                                                </Link>
+
+                                            </td>
+                                            <td>
                                                 <Link to='/update'>
-                                                    <Button onClick={() => passData(item)}>Update</Button>
+                                                    <Button variant="warning" onClick={() => passData(item)}>Update</Button>
                                                 </Link>
 
                                             </td>

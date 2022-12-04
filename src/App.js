@@ -8,24 +8,25 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Signup from './components/Signup';
+import SingleView from './components/SingleView';
 
 function App() {
   return (
     <div>
       <BrowserRouter>
-      <Navbar  bg="light" variant="light" expand="lg">
+      <Navbar  className="color-nav"  variant="dark" expand="lg">
       <Container>
         <Navbar.Brand href="#home">Employee Management App</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/view">Home</Nav.Link>
-            <Nav.Link href="/add">Add</Nav.Link>
+            <Nav.Link href="/add">Add Employee Record</Nav.Link>
             <NavDropdown title="Account" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
+              <NavDropdown.Item style={{color: '#414044'}}href="#action/3.1">Profile</NavDropdown.Item>
               
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/">Log Out</NavDropdown.Item>
+              <NavDropdown.Item style={{color: '#414044'}} href="/">Log Out</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
@@ -34,6 +35,7 @@ function App() {
     <Routes>
           <Route path='/' element={<Signup/>}/>
           <Route path='/add' element={<AddEmployee/>}/>
+          <Route path='/single' element={<SingleView/>}/>
           <Route path='/view' element={<EmpView/>}/>
           <Route path='/update' element={<Update/>}/>
         </Routes>

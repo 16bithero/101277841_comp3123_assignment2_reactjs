@@ -39,27 +39,23 @@ export default function AddEmployee() {
         <>
             <br />
             <br />
-            <br />
-            <br />
-            <br />
-            <br />
             <div className="divmid">
                 <div className="inside">
                     <div className="divBody">
-                        <br />
+                        <h2 style={{fontWeight:'bold'}}>Add Employee</h2>
                         <section className="divbox">
-                            <Form onSubmit={addEmployee}>
+                            <Form>
                                 <Form.Group className="mb-3">
                                     <Form.Label>First Name</Form.Label>
-                                    <Form.Control type="text" name='first_name' placeholder="Enter First Name" value={data.first_name} onChange={event => onValueChanged(event)} />
+                                    <Form.Control type="text" name='first_name' placeholder="Enter First Name" value={data.first_name} onChange={event => onValueChanged(event)} required/>
                                 </Form.Group>
                                 <Form.Group className="mb-3">
                                     <Form.Label>Last Name</Form.Label>
-                                    <Form.Control type="text" name='last_name' placeholder="Enter Last Name" value={data.last_name} onChange={event => onValueChanged(event)} />
+                                    <Form.Control type="text" name='last_name' placeholder="Enter Last Name" value={data.last_name} onChange={event => onValueChanged(event)} required/>
                                 </Form.Group>
                                 <Form.Group className="mb-3">
                                     <Form.Label>Email</Form.Label>
-                                    <Form.Control type="email" name='email' placeholder="Enter Email" value={data.email} onChange={(event) => onValueChanged(event)} />
+                                    <Form.Control type="email" name='email' placeholder="Enter Email" value={data.email} onChange={(event) => onValueChanged(event)} required/>
                                 </Form.Group>
                                 <Link to='/view'>
                                     <Button variant="primary" size="lg" type='submit' onClick={addEmployee}>Add Employee</Button>

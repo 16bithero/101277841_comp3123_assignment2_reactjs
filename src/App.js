@@ -1,13 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import AddEmployee from './components/AddEmployee';
-import ViewEmployee from './components/ViewEmployee';
+import EmpView from './components/EmpView';
 
 function App() {
   return (
     <div className="App">
+      <EmpView/>
       <AddEmployee/>
-      <ViewEmployee/>
     </div>
   );
 }

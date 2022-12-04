@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { BrowserRouter, Route, Routes, NavLink, Link, useNavigate } from 'react-router-dom';
 
-export default function Signup() {
+export default function Login() {
 
     const INITIAL_VALUE = {
         username: "",
@@ -14,15 +14,20 @@ export default function Signup() {
 
     let navigate = useNavigate();
     const [data, setData] = useState('')
+    const [error, setError] = useState('')
 
-    const addUser = async (event) => {
+    const userLogin = async (event) => {
         event.preventDefault()
-        const signup = {
+        const login = {
             username: data.username,
             password: data.password,
         }
-        axios.post('https://comp3123-assignment-101277841.herokuapp.com/user/add', signup)
+        axios.post('https://comp3123-assignment-101277841.herokuapp.com/user/login', login)
             .then(res => navigate('/view'))
+            .catch(function(error){
+                console.log(error)
+                setError("Invalid Credentials")
+            })
     }
 
     const onValueChanged = (event) => {
@@ -30,9 +35,6 @@ export default function Signup() {
         setData({ ...data, [event.target.name]: event.target.value })
     }
 
-    function refreshPage() {
-        window.location.reload();
-      }
 
     return (
         <>
@@ -52,8 +54,9 @@ export default function Signup() {
                                     <Form.Label>Password</Form.Label>
                                     <Form.Control type="password" name='password' placeholder="Enter Last Name" value={data.password} onChange={event => onValueChanged(event)} />
                                 </Form.Group>
+                                <h2 style={{color: 'red', fontWeight: 'bold', textAlign: 'center'}}>{error}</h2>
                                 <a href='/view'>
-                                <Button variant="primary" size="lg">Log In</Button>
+                                <Button variant="primary" size="lg" onClick={userLogin}>Log In</Button>
                                 </a>
                             </Form>
                         </section>

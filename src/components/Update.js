@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { BrowserRouter, Route, Routes, NavLink, Link, useNavigate } from 'react-router-dom';
@@ -35,16 +33,10 @@ export default function Update() {
             last_name: last_name,
             email: email
         }
-        axios.put(`https://comp3123-assignment-101277841.herokuapp.com/api/employees/update/${id}`, inputEmp)
+        axios.put(`https://comp3123-assignment-101277841.herokuapp.com/employees/update/${id}`, inputEmp)
             .then(res => navigate('/view'))
     }
-
-    // const onValueChanged = (event) => {
-    //     event.preventDefault()
-    //     /setData({ ...data, [event.target.name]: event.target.value })
-    // }
-
-
+    
     return (
         <>
             <br />
@@ -53,28 +45,30 @@ export default function Update() {
             <br />
             <br />
             <br />
-            <div class="divmid">
-                <div class="divBody">
+            <div className="divmid">
+            <div className="inside">
+                <div className="divBody">
                     <br />
-                    <section class="divbox">
+                    <section className="divbox">
                         <Form>
                             <Form.Group className="mb-3">
-                                <Form.Label>FName</Form.Label>
-                                <Form.Control type="text" name='first_name' placeholder="First name" value={first_name} onChange={event => setFname(event.target.value)} />
+                                <Form.Label>First Name</Form.Label>
+                                <Form.Control type="text" name='first_name' placeholder="Enter First Name" value={first_name} onChange={event => setFname(event.target.value)} />
                             </Form.Group>
                             <Form.Group className="mb-3">
-                                <Form.Label>LName</Form.Label>
-                                <Form.Control type="text" name='last_name' placeholder="Last Name" value={last_name} onChange={event => setLname(event.target.value)} />
+                                <Form.Label>Last Name</Form.Label>
+                                <Form.Control type="text" name='last_name' placeholder="Enter Last Name" value={last_name} onChange={event => setLname(event.target.value)} />
                             </Form.Group>
                             <Form.Group className="mb-3">
                                 <Form.Label>Email</Form.Label>
-                                <Form.Control type="email" name='email' placeholder="Enter email" value={email} onChange={(event) => setEmail(event.target.value)} />
+                                <Form.Control type="email" name='email' placeholder="Enter Email" value={email} onChange={(event) => setEmail(event.target.value)} />
                             </Form.Group>
                             <Link to='/view'>
-                                <Button variant='success' type='submit' onClick={updateEmployee}>Submit</Button>
+                                <Button variant="primary" size="lg" type='submit' onClick={updateEmployee}>Update Employee</Button>
                             </Link>
                         </Form>
                     </section>
+                </div>
                 </div>
             </div>
         </>

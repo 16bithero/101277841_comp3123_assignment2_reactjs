@@ -69,16 +69,11 @@ div {
 table.size{
   table-layout: fixed;
   width: 100%;
-  text-align: left;
 }
 
-caption {
-  text-align: left;
-}
 
 th {
-  text-align: left;
-  text-indent: 30px;
+  text-align: center;
 }
 
 dt {
@@ -91,11 +86,6 @@ dd {
   padding: 5px;
 }
 
-li {
-  margin: auto;
-  text-align: left;
-  list-style-position: inside;
-}
 
 ol.lower {
   list-style-type: lower-alpha;
@@ -159,7 +149,6 @@ h1, h2, strong, th, dt {
   border-radius: 10px;
   color: white;
   padding: 10px 25px;
-  text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
@@ -195,7 +184,7 @@ h1, h2, strong, th, dt {
 }
 
 .inside { /* This div is inside divmid so the scrollbar won't overlap the outer box. */
-  height: vh;
+  height: 60vh;
   overflow: auto;
   background-color: #fefefe;
   background-size: cover;
@@ -297,7 +286,7 @@ img {
   max-width: 100%;
 }
 
-input[type=text], input[type=email], select, option, input[type="file"]{
+input[type=text], input[type=email], select, option, input[type="password"]{
   width: 100%;
   padding: 1em;
   margin: 5px 0 22px 0;
@@ -311,4 +300,17 @@ label{
   font-weight: bold;
   font-size: large;
   text-align: left;
+}
+
+Button, input[type="submit"] {
+  background-color: #ff4a57;
+  color: white;
+  font-weight: bold;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  border-radius: 1em;
 }

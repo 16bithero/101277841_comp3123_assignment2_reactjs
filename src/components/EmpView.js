@@ -13,14 +13,14 @@ export default function EmpView() {
     const [data, setData] = useState([]);
 
     const deleteEmployee = (id) => {
-        axios.delete(`https://comp3123-assignment-101277841.herokuapp.com/api/employees/delete/${id}`)
+        axios.delete(`https://comp3123-assignment-101277841.herokuapp.com/employees/delete/${id}`)
             .then(res => navigate(0))
     }
 
     const getProductData = async () => {
         try {
             const emps = await axios.get(
-                "https://comp3123-assignment-101277841.herokuapp.com/api/employees/")
+                "https://comp3123-assignment-101277841.herokuapp.com/employees/")
             console.log(emps.data);
             setData(emps.data);
         } catch (e) {
@@ -49,11 +49,11 @@ export default function EmpView() {
             <br />
             <br />
             <br />
-            <div class="divmid">
-                <div class="inside">
-                    <div class="divBody">
+            <div className="divmid">
+                <div className="inside">
+                    <div className="divBody">
                         <br />
-                        <section class="divbox">
+                        <section className="divbox">
                             <Table striped bordered hover>
                                 <tbody>
                                     <tr>

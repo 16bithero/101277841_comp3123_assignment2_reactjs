@@ -7,10 +7,11 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Signup from './components/Signup';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <BrowserRouter>
       <Navbar  bg="light" variant="light" expand="lg">
       <Container>
@@ -24,13 +25,14 @@ function App() {
               <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
               
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.3">Log Out</NavDropdown.Item>
+              <NavDropdown.Item href="/">Log Out</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
     <Routes>
+          <Route path='/' element={<Signup/>}/>
           <Route path='/add' element={<AddEmployee/>}/>
           <Route path='/view' element={<EmpView/>}/>
           <Route path='/update' element={<Update/>}/>

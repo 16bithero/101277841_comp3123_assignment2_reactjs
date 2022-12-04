@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import '../index.css';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
@@ -24,7 +25,7 @@ export default function AddEmployee() {
             last_name: data.last_name,
             email: data.email
         }
-        axios.post('https://comp3123-assignment-101277841.herokuapp.com/api/employees/add', inputEmp)
+        axios.post('https://comp3123-assignment-101277841.herokuapp.com/employees/add', inputEmp)
             .then(res => navigate('/view'))
     }
 
@@ -42,27 +43,26 @@ export default function AddEmployee() {
             <br />
             <br />
             <br />
-            <div class="divmid">
-                <div class="inside">
-                    <div class="divBody">
+            <div className="divmid">
+                <div className="inside">
+                    <div className="divBody">
                         <br />
-                        <section class="divbox">
+                        <section className="divbox">
                             <Form onSubmit={addEmployee}>
                                 <Form.Group className="mb-3">
-                                    <Form.Label>FName</Form.Label>
-                                    <Form.Control type="text" name='first_name' placeholder="First name" value={data.first_name} onChange={event => onValueChanged(event)} />
+                                    <Form.Label>First Name</Form.Label>
+                                    <Form.Control type="text" name='first_name' placeholder="Enter First Name" value={data.first_name} onChange={event => onValueChanged(event)} />
+                                </Form.Group>
+                                <Form.Group className="mb-3">
+                                    <Form.Label>Last Name</Form.Label>
+                                    <Form.Control type="text" name='last_name' placeholder="Enter Last Name" value={data.last_name} onChange={event => onValueChanged(event)} />
                                 </Form.Group>
                                 <Form.Group className="mb-3">
                                     <Form.Label>Email</Form.Label>
-                                    <Form.Control type="email" name='email' placeholder="Enter email" value={data.email} onChange={(event) => onValueChanged(event)} />
-                                </Form.Group>
-
-                                <Form.Group className="mb-3">
-                                    <Form.Label>LName</Form.Label>
-                                    <Form.Control type="text" name='last_name' placeholder="Last Name" value={data.last_name} onChange={event => onValueChanged(event)} />
+                                    <Form.Control type="email" name='email' placeholder="Enter Email" value={data.email} onChange={(event) => onValueChanged(event)} />
                                 </Form.Group>
                                 <Link to='/view'>
-                                    <Button variant='success' type='submit' onClick={addEmployee}>Submit</Button>
+                                    <Button variant="primary" size="lg" type='submit' onClick={addEmployee}>Add Employee</Button>
                                 </Link>
                             </Form>
                         </section>

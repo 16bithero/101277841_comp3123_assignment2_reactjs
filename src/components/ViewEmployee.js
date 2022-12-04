@@ -33,7 +33,6 @@ export default class ViewEmployee extends Component {
         <>
         <div>ViewEmployee</div>
         <button onClick={this.getUserData}>Get Users</button>
-        
         </>
     )
   }

@@ -16,24 +16,16 @@ export default function AddEmployee() {
 
     const [data, setData] = useState(INITIAL_VALUE)
 
-    const handleSubmit = (event) => {
-        event.preventDefault()
-        setData(data)
-    }
-
     const addEmployee = async (event) => {
         event.preventDefault()
-        const newEmployee = {
-            first_name: "data.first_name",
-            last_name: "data.last_name",
-            email: `data.email`
+        const inputEmp = {
+            first_name: data.first_name,
+            last_name: data.last_name,
+            email: data.email
         }
-        axios.post('https://comp3123-assignment-101277841.herokuapp.com/api/employees/add', { newEmployee })
+        axios.post('https://comp3123-assignment-101277841.herokuapp.com/api/employees/add', inputEmp)
             .then(res => console.log(res))
     }
-
-
-
 
     const onValueChanged = (event) => {
         event.preventDefault()

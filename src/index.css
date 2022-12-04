@@ -173,7 +173,7 @@ p, h2, h3 {
 
 /* Formats the body content */
 .divmid { /* Centers the content and encloses them in a box */
-  width: 70%;
+  width: 50%;
   height: 75vh;
   margin: auto;
   border-radius: 40px;
@@ -199,8 +199,9 @@ p, h2, h3 {
 
 /* Hero section in the webpage */
 .hero {
-  height: 30vh;
+  height: 40vh;
   padding: 50px;
+  background-image: url("./bg.gif");
   background-color: #fefefe;
   background-size: cover;
 }
@@ -287,8 +288,8 @@ img {
 
 input[type=text], input[type=email], select, option, input[type="password"]{
   width: 100%;
-  padding: 1em;
-  margin: 5px 0 22px 0;
+  padding: 0.7em;
+  margin: 5px 0 10px 0;
   display: inline-block;
   border: none;
   background: #f1f1f1;

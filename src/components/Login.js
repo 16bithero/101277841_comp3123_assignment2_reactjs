@@ -30,6 +30,10 @@ export default function Signup() {
         setData({ ...data, [event.target.name]: event.target.value })
     }
 
+    function refreshPage() {
+        window.location.reload();
+      }
+
     return (
         <>
             <br />
@@ -37,7 +41,7 @@ export default function Signup() {
             <div className="divmid">
                 <div className="inside">
                     <div className="divBody">
-                    <h2 style={{fontWeight:'bold'}}>Sign Up</h2>
+                    <h2 style={{fontWeight:'bold'}}>Log In</h2>
                         <section className="divbox">
                             <Form>
                                 <Form.Group className="mb-3">
@@ -48,9 +52,9 @@ export default function Signup() {
                                     <Form.Label>Password</Form.Label>
                                     <Form.Control type="password" name='password' placeholder="Enter Last Name" value={data.password} onChange={event => onValueChanged(event)} />
                                 </Form.Group>
-                                <Link to='/view'>
-                                    <Button variant="primary" size="lg" type='submit' onClick={addUser}>Sign Up</Button>
-                                </Link>
+                                <a href='/view'>
+                                <Button variant="primary" size="lg">Log In</Button>
+                                </a>
                             </Form>
                         </section>
                     </div>

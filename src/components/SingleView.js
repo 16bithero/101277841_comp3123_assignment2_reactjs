@@ -2,13 +2,9 @@ import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from 'axios';
-import { BrowserRouter, Route, Routes, NavLink, Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function SingleView() {
-
-
-    let navigate = useNavigate();
     const [eid, setID] = useState('')
     const [first_name, setFname] = useState('')
     const [last_name, setLname] = useState('')

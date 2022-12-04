@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Navbar  bg="dark" variant="dark" expand="lg">
+      <Navbar  bg="light" variant="light" expand="lg">
       <Container>
         <Navbar.Brand href="#home">Employee Management App</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

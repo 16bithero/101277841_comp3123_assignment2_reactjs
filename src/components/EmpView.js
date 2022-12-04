@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function EmpView() {
 
@@ -42,31 +42,48 @@ export default function EmpView() {
     }, []);
 
     return (
-        <Table striped bordered hover>
-            <tbody>
-                <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th colSpan={2}>Actions</th>
-                </tr>
-                {data.map((item, index) => (
-                    <tr key={index}>
-                        <td>{item.first_name}</td>
-                        <td>{item.last_name}</td>
-                        <td>{item.email}</td>
-                        <td>
-                            <Link to='/update'>
-                                <Button onClick={() => passData(item)}>Update</Button>
-                            </Link>
+        <>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="divmid">
+                <div class="inside">
+                    <div class="divBody">
+                        <br />
+                        <section class="divbox">
+                            <Table striped bordered hover>
+                                <tbody>
+                                    <tr>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Email</th>
+                                        <th colSpan={2}>Actions</th>
+                                    </tr>
+                                    {data.map((item, index) => (
+                                        <tr key={index}>
+                                            <td>{item.first_name}</td>
+                                            <td>{item.last_name}</td>
+                                            <td>{item.email}</td>
+                                            <td>
+                                                <Link to='/update'>
+                                                    <Button onClick={() => passData(item)}>Update</Button>
+                                                </Link>
 
-                        </td>
-                        <td>
-                                <Button variant="danger" onClick={() => deleteEmployee(item._id)}>Delete</Button>
-                        </td>
-                    </tr>
-                ))}
-            </tbody>
-        </Table>
+                                            </td>
+                                            <td>
+                                                <Button variant="danger" onClick={() => deleteEmployee(item._id)}>Delete</Button>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </Table>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </>
     );
 }

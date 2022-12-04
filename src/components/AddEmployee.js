@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-import { BrowserRouter, Route, Routes, NavLink, Link, useNavigate} from 'react-router-dom';
+import { BrowserRouter, Route, Routes, NavLink, Link, useNavigate } from 'react-router-dom';
 
 export default function AddEmployee() {
 
@@ -25,7 +25,7 @@ export default function AddEmployee() {
             email: data.email
         }
         axios.post('https://comp3123-assignment-101277841.herokuapp.com/api/employees/add', inputEmp)
-            .then(res => navigate('/view'))  
+            .then(res => navigate('/view'))
     }
 
     const onValueChanged = (event) => {
@@ -35,29 +35,40 @@ export default function AddEmployee() {
 
 
     return (
-    <>
-            <Form onSubmit={addEmployee}>
-                <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formGridEmail">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" name='email' placeholder="Enter email" value={data.email} onChange={(event) => onValueChanged(event)} />
-                    </Form.Group>
-                    <Form.Group as={Col} controlId="formGridFullname">
-                        <Form.Label>FName</Form.Label>
-                        <Form.Control name='first_name' placeholder="First name" value={data.first_name} onChange={event => onValueChanged(event)} />
-                    </Form.Group>
-                    <Form.Group as={Col} controlId="formGridFullname">
-                        <Form.Label>LName</Form.Label>
-                        <Form.Control name='last_name' placeholder="Last Name" value={data.last_name} onChange={event => onValueChanged(event)} />
-                    </Form.Group>
-                </Row>
-                <Link to='/view'>
-                <Button variant='success' type='submit' onClick={addEmployee}>Submit</Button>
-                </Link>
-                </Form>
-                <h3>{data.first_name}</h3>
-                <h3>{data.last_name}</h3>
-                <h3>{data.email}</h3>
-            </>
-            )
+        <>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="divmid">
+                <div class="inside">
+                    <div class="divBody">
+                        <br />
+                        <section class="divbox">
+                            <Form onSubmit={addEmployee}>
+                                <Form.Group className="mb-3">
+                                    <Form.Label>FName</Form.Label>
+                                    <Form.Control type="text" name='first_name' placeholder="First name" value={data.first_name} onChange={event => onValueChanged(event)} />
+                                </Form.Group>
+                                <Form.Group className="mb-3">
+                                    <Form.Label>Email</Form.Label>
+                                    <Form.Control type="email" name='email' placeholder="Enter email" value={data.email} onChange={(event) => onValueChanged(event)} />
+                                </Form.Group>
+
+                                <Form.Group className="mb-3">
+                                    <Form.Label>LName</Form.Label>
+                                    <Form.Control type="text" name='last_name' placeholder="Last Name" value={data.last_name} onChange={event => onValueChanged(event)} />
+                                </Form.Group>
+                                <Link to='/view'>
+                                    <Button variant='success' type='submit' onClick={addEmployee}>Submit</Button>
+                                </Link>
+                            </Form>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
 }

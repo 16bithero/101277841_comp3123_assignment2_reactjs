@@ -11,3 +11,304 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* Sets the background color and typeface of the website */
+html {
+  font-family: Helvetica, sans-serif, Arial;
+}
+
+/* Enables smooth scrolling when clicking bookmarks */
+div {
+  scroll-behavior: smooth;
+}
+
+/* Centers the content */
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 0;
+}
+
+/* Formats the navigation menu */
+.row{
+  margin: auto;
+  width: 50%;
+  height: 6vh;
+}
+
+/* To make sure no floating elements are allowed on the left */
+.last{
+  clear: left;
+}
+
+/* Formats column nav */
+.col
+{
+  float: left;
+  width: 25%;
+  text-align: center;
+}
+
+/* Formats bookmark in the webpage */
+.bookMark {
+  margin: 20px;
+  width: 95%;
+  text-align: center;
+}
+
+.res {
+  width: 33%; /* Adjusted width for the 3 bookmarks in resume.html */
+}
+
+.list {
+  width: 20%; /* Adjusted width for the 3 bookmarks in resume.html */
+}
+
+/* These are for the table customization */
+table.size{
+  table-layout: fixed;
+  width: 100%;
+  text-align: left;
+}
+
+caption {
+  text-align: left;
+}
+
+th {
+  text-align: left;
+  text-indent: 30px;
+}
+
+dt {
+  text-indent: 30px;
+  font-weight: bold;
+  padding: 0;
+}
+
+dd {
+  padding: 5px;
+}
+
+li {
+  margin: auto;
+  text-align: left;
+  list-style-position: inside;
+}
+
+ol.lower {
+  list-style-type: lower-alpha;
+}
+
+ol.upper {
+  list-style-type: upper-alpha;
+}
+
+ol.upperRoman {
+  list-style-type: upper-roman;
+}
+
+ol.lowerRoman {
+  list-style-type: lower-roman;
+}
+
+ul.disc {
+  list-style-type: disc;
+}
+
+ul.circle {
+  list-style-type: circle;
+}
+
+ul.square {
+  list-style-type: square;
+}
+
+/* Font customization */
+h1, a, a:visited {
+  color: #414044;
+  font-weight: bold;
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.19);
+}
+
+a:link {
+  color: #414044;
+}
+
+a.normal {
+  color: #414044;
+  font-weight: bold;
+  text-shadow: none;
+}
+
+p, h2, h3 {
+  margin: 10px;
+  line-height: 150%;
+  color: #414044;
+}
+
+h1, h2, strong, th, dt {
+  color: #3f4584;
+}
+
+/* Formats the buttons used in html */
+.button{
+  background-color: #fdfdfd;
+  border: 1px;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button:hover {
+  background-color: #3f4584;
+  color: #fdfdfd;
+}
+
+.button.navi{
+  background-color: #3f4584;
+  color: white;
+}
+
+.button.navi:hover{
+  background-color: #fdfdfd;
+  color: #3f4584;
+}
+
+/* Formats the body content */
+.divmid { /* Centers the content and encloses them in a box */
+  width: 50%;
+  height: 60vh;
+  margin: auto;
+  border-radius: 40px;
+  overflow: hidden; /* hides the scrollbar */
+  background-color: #fdfdfd;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.inside { /* This div is inside divmid so the scrollbar won't overlap the outer box. */
+  height: vh;
+  overflow: auto;
+  background-color: #fefefe;
+  background-size: cover;
+}
+
+.divBody {
+  margin: auto;
+  padding: 25px;
+  height: 100%;
+  background-size: cover;
+}
+
+/* Hero section in the webpage */
+.hero {
+  height: 30vh;
+  padding: 50px;
+  background-color: #fefefe;
+  background-size: cover;
+}
+
+/* Hero caption in the webpage */
+.heroCap {
+  margin: auto;
+  padding: 50px;
+  height: 15vh;
+  background-color: #fefefe;
+}
+
+/* Encloses the elements in a small box */
+.divbox {
+  margin: auto;
+  background-color: #fefefe;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 20px;
+}
+/* Formats horizontal line */
+hr {
+  background-color: #414044;
+  border: 0 none;
+  height: 3px;
+  width: 75%;
+  margin: auto;
+}
+/* Adjusts the margin on resume.html page */
+hr.left {
+  margin-left: 10px;
+}
+
+/* Scrollbar properties */
+
+/* Scrollbar width/thickness */
+::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 40px;
+}
+
+/* Handle / Active state */
+::-webkit-scrollbar-thumb {
+  background: #414044;
+  border-radius: 40px;
+  background-clip: padding-box;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: dimgray;
+}
+
+/* Tracker color */
+::-webkit-scrollbar-track
+{
+  background-color: darkgrey;
+}
+
+/* Formats column element */
+.columns{
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+/* Formats column width */
+.contact {
+  float: left;
+  width: 50%;
+  height: 500px;
+}
+/* Formats Google Map Size */
+iframe {
+  height: 80%;
+  width: 95%;
+  border: 1px solid #fdfdfd;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.19);
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+input[type=text], input[type=email], select, option, input[type="file"]{
+  width: 100%;
+  padding: 1em;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 1em;
+}
+
+label{
+  font-weight: bold;
+  font-size: large;
+  text-align: left;
+}

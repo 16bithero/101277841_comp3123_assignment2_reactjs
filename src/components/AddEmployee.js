@@ -1,10 +1,11 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+import { BrowserRouter, Route, Routes, NavLink, Link, useNavigate} from 'react-router-dom';
 
 export default function AddEmployee() {
 
@@ -13,7 +14,7 @@ export default function AddEmployee() {
         last_name: "",
         email: ""
     }
-
+    let navigate = useNavigate();
     const [data, setData] = useState(INITIAL_VALUE)
 
     const addEmployee = async (event) => {
@@ -24,7 +25,7 @@ export default function AddEmployee() {
             email: data.email
         }
         axios.post('https://comp3123-assignment-101277841.herokuapp.com/api/employees/add', inputEmp)
-            .then(res => console.log(res))
+            .then(res => navigate('/view'))  
     }
 
     const onValueChanged = (event) => {
@@ -50,7 +51,9 @@ export default function AddEmployee() {
                         <Form.Control name='last_name' placeholder="Last Name" value={data.last_name} onChange={event => onValueChanged(event)} />
                     </Form.Group>
                 </Row>
+                <Link to='/view'>
                 <Button variant='success' type='submit' onClick={addEmployee}>Submit</Button>
+                </Link>
                 </Form>
                 <h3>{data.first_name}</h3>
                 <h3>{data.last_name}</h3>

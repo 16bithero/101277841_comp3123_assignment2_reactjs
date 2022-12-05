@@ -33,12 +33,6 @@ div {
   padding: 0;
 }
 
-/* Formats the navigation menu */
-.row{
-  margin: auto;
-  width: 50%;
-  height: 6vh;
-}
 
 /* To make sure no floating elements are allowed on the left */
 .last{
@@ -46,12 +40,6 @@ div {
 }
 
 /* Formats column nav */
-.col
-{
-  float: left;
-  width: 25%;
-  text-align: center;
-}
 
 /* Formats bookmark in the webpage */
 .bookMark {

@@ -17,30 +17,26 @@ export default function AddEmployee() {
     let navigate = useNavigate();
     const [data, setData] = useState(INITIAL_VALUE)
     const validEmail = new RegExp('^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$');
-    const validInput= new RegExp('^[A-Za-z]+$');
+    const validInput = new RegExp('^[A-Za-z]+$');
     const [emailErr, setEmailErr] = useState(false);
     const [fnameErr, setFnameErr] = useState(false);
     const [lnameErr, setLnameErr] = useState(false);
 
     const addEmployee = async (event) => {
         event.preventDefault()
-        if(!validInput.test(data.first_name)){
-            setFnameErr(true)
+        if (validInput.test(data.first_name) && validInput.test(data.last_name) && validEmail.test(data.email)) {
+
+            const inputEmp = {
+                first_name: data.first_name,
+                last_name: data.last_name,
+                email: data.email
+            }
+            axios.post('https://comp3123-assignment-101277841.herokuapp.com/employees/add', inputEmp)
+                .then(res => navigate('/view'))
         }
-        if(!validInput.test(data.last_name)){
-            setLnameErr(true)
-        }
-        if(validEmail.test(data.email)){
-          
-        const inputEmp = {
-            first_name: data.first_name,
-            last_name: data.last_name,
-            email: data.email
-        }
-        axios.post('https://comp3123-assignment-101277841.herokuapp.com/employees/add', inputEmp)
-            .then(res => navigate('/view'))
-    }
-    setEmailErr(true)
+        setEmailErr(!validEmail.test(data.email)) 
+        setLnameErr(!validInput.test(data.last_name)) 
+        setFnameErr(!validInput.test(data.first_name))
     }
 
     const onValueChanged = (event) => {

@@ -21,32 +21,28 @@ export default function Update() {
     }, []);
 
     const validEmail = new RegExp('^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$');
-    const validInput = new RegExp('^[A-Za-z]+$');
+    const validInput= new RegExp('^[A-Za-z]+$');
     const [emailErr, setEmailErr] = useState(false);
     const [fnameErr, setFnameErr] = useState(false);
     const [lnameErr, setLnameErr] = useState(false);
 
     const updateEmployee = async (event) => {
         event.preventDefault()
-        if (!validInput.test(first_name)) {
-            setFnameErr(true)
+        if (validInput.test(first_name) && validInput.test(last_name) && validEmail.test(email)) {
+          
+        const id = eid
+        const inputEmp = {
+            first_name: first_name,
+            last_name: last_name,
+            email: email
         }
-        if (!validInput.test(last_name)) {
-            setLnameErr(true)
-        }
-        if (validEmail.test(email)) {
-
-            const id = eid
-            const inputEmp = {
-                first_name: first_name,
-                last_name: last_name,
-                email: email
-            }
-            axios.put(`https://comp3123-assignment-101277841.herokuapp.com/employees/update/${id}`, inputEmp)
-                .then(res => navigate('/view'))
-        }
-        setEmailErr(true)
+        axios.put(`https://comp3123-assignment-101277841.herokuapp.com/employees/update/${id}`, inputEmp)
+            .then(res => navigate('/view'))
     }
+    setEmailErr(!validEmail.test(email)) 
+    setLnameErr(!validInput.test(last_name)) 
+    setFnameErr(!validInput.test(first_name))
+}
 
     return (
         <>

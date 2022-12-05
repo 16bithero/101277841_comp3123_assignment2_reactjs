@@ -25,10 +25,7 @@ export default function Signup() {
 
     const addUser = async (event) => {
         event.preventDefault()
-        if (!validInput.test(data.first_name)) {
-            setFnameErr(true)
-        }
-        if (validInput.test(data.last_name)) {
+        if (validInput.test(data.first_name) && validInput.test(data.last_name)) {
             const signup = {
                 first_name: data.first_name,
                 last_name: data.last_name,
@@ -40,7 +37,8 @@ export default function Signup() {
                 .catch(function (error) {
                     setError(' (Username already exists)')
                 })
-        } setLnameErr(true)
+        } setLnameErr(!validInput.test(data.last_name)) 
+        setFnameErr(!validInput.test(data.first_name))
     }
 
     const onValueChanged = (event) => {
@@ -58,17 +56,18 @@ export default function Signup() {
                         <h2 style={{ fontWeight: 'bold' }}>Sign Up</h2>
                         <section className="divbox">
                             <Form>
-                            <Row className="mb-3">
-                                <Form.Group as={Col} >
-                                    <Form.Label>First Name</Form.Label>
-                                    {fnameErr && <a style={{ color: '#E32636', fontWeight: 'bold' }}> (Invalid format. Only letters allowed.)</a>}
-                                    <Form.Control type="text" name='first_name' placeholder="Enter First Name" value={data.first_name} onChange={event => onValueChanged(event)} />
-                                </Form.Group>
-                                <Form.Group as={Col} >
-                                    <Form.Label>Last Name</Form.Label>
-                                    {lnameErr && <a style={{ color: '#E32636', fontWeight: 'bold' }}> (Invalid format. Only letters allowed.)</a>}
-                                    <Form.Control type="text" name='last_name' placeholder="Enter Last Name" value={data.last_name} onChange={event => onValueChanged(event)} />
-                                </Form.Group>
+                                <Row className="align-items-center">
+                                    <Form.Group as={Col} controlId="formGridEmail">
+                                        <Form.Label>First Name</Form.Label>
+                                        {fnameErr && <a style={{ color: '#E32636', fontWeight: 'bold' }}> (Error: Letters Only)</a>}
+                                        <Form.Control type="text" name='first_name' placeholder="Enter First Name" value={data.first_name} onChange={event => onValueChanged(event)} />
+                                    </Form.Group>
+
+                                    <Form.Group as={Col} >
+                                        <Form.Label>Last Name</Form.Label>
+                                        {lnameErr && <a style={{ color: '#E32636', fontWeight: 'bold' }}> (Error: Letters Only)</a>}
+                                        <Form.Control type="text" name='last_name' placeholder="Enter Last Name" value={data.last_name} onChange={event => onValueChanged(event)} />
+                                    </Form.Group>
                                 </Row>
                                 <Form.Group className="mb-3">
                                     <Form.Label>Username</Form.Label>
@@ -83,7 +82,7 @@ export default function Signup() {
                                     <Button variant="primary" size="lg" type='submit' onClick={addUser}>Sign Up</Button>
                                 </Link>
                                 <Form.Label>Have an account?</Form.Label>
-                                <br/>
+                                <br />
                                 <a href='/login'>
                                     <Button variant="primary" size="lg">Login</Button>
                                 </a>

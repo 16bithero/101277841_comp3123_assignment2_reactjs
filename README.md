@@ -6,7 +6,7 @@
 <img src='https://github.com/16bithero/16bithero/blob/main/Home.png'>
 
 ### Login Screen
-<img src='https://github.com/16bithero/16bithero/blob/main/Login.png'>
+<img src='https://github.com/16bithero/16bithero/blob/main/LogIn.png'>
 
 ### Sign Up Screen
 <img src='https://github.com/16bithero/16bithero/blob/main/SignUp.png'>

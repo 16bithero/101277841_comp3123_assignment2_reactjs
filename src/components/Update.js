@@ -20,16 +20,32 @@ export default function Update() {
         setEmail(localStorage.getItem('email'))
     }, []);
 
+    const validEmail = new RegExp('^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$');
+    const validInput = new RegExp('^[A-Za-z]+$');
+    const [emailErr, setEmailErr] = useState(false);
+    const [fnameErr, setFnameErr] = useState(false);
+    const [lnameErr, setLnameErr] = useState(false);
+
     const updateEmployee = async (event) => {
         event.preventDefault()
-        const id = eid
-        const inputEmp = {
-            first_name: first_name,
-            last_name: last_name,
-            email: email
+        if (!validInput.test(first_name)) {
+            setFnameErr(true)
         }
-        axios.put(`https://comp3123-assignment-101277841.herokuapp.com/employees/update/${id}`, inputEmp)
-            .then(res => navigate('/view'))
+        if (!validInput.test(last_name)) {
+            setLnameErr(true)
+        }
+        if (validEmail.test(email)) {
+
+            const id = eid
+            const inputEmp = {
+                first_name: first_name,
+                last_name: last_name,
+                email: email
+            }
+            axios.put(`https://comp3123-assignment-101277841.herokuapp.com/employees/update/${id}`, inputEmp)
+                .then(res => navigate('/view'))
+        }
+        setEmailErr(true)
     }
 
     return (
@@ -44,14 +60,17 @@ export default function Update() {
                             <Form>
                                 <Form.Group className="mb-3">
                                     <Form.Label>First Name</Form.Label>
+                                    {fnameErr && <a style={{ color: '#E32636', fontWeight: 'bold' }}> (Invalid format. Only letters allowed.)</a>}
                                     <Form.Control type="text" name='first_name' placeholder="Enter First Name" value={first_name} onChange={event => setFname(event.target.value)} />
                                 </Form.Group>
                                 <Form.Group className="mb-3">
                                     <Form.Label>Last Name</Form.Label>
+                                    {lnameErr && <a style={{ color: '#E32636', fontWeight: 'bold' }}> (Invalid format. Only letters allowed.)</a>}
                                     <Form.Control type="text" name='last_name' placeholder="Enter Last Name" value={last_name} onChange={event => setLname(event.target.value)} />
                                 </Form.Group>
                                 <Form.Group className="mb-3">
                                     <Form.Label>Email</Form.Label>
+                                    {emailErr && <a style={{ color: '#E32636', fontWeight: 'bold' }}> (Invalid format. Use example@domain.com)</a>}
                                     <Form.Control type="email" name='email' placeholder="Enter Email" value={email} onChange={(event) => setEmail(event.target.value)} />
                                 </Form.Group>
                                 <Link to='/view'>

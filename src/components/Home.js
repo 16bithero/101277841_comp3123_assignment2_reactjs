@@ -17,8 +17,7 @@ export default function Home() {
                     <Link to='/login'>
                         <Button size="lg" style={{ width: 150 }}>Login</Button>
                     </Link>
-                    <br />
-                    <br />
+                    <br /><br />
                     <Link to='/signup'>
                         <Button size="lg" style={{ width: 150 }}>Signup</Button>
                     </Link>

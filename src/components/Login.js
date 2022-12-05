@@ -61,9 +61,14 @@ export default function Login() {
                                     <Form.Label>Password</Form.Label>
                                     <Form.Control type="password" name='password' placeholder="Enter Last Name" value={data.password} onChange={event => onValueChanged(event)} />
                                 </Form.Group>
-                                <h2 style={{ color: 'red', fontWeight: 'bold', textAlign: 'center' }}>{error}</h2>
+                                <h4 style={{ color: '#E32636', fontWeight: 'bold', textAlign: 'center' }}>{error}</h4>
                                 <a href='/view'>
                                     <Button variant="primary" size="lg" type='submit'>Log In</Button>
+                                </a>
+                                <br /><br />
+                                <Form.Label>Don't have an account?</Form.Label>
+                                <a href='/signup'>
+                                    <Button variant="primary" size="lg">Sign up</Button>
                                 </a>
                             </Form>
                         </section>

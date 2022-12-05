@@ -13,11 +13,25 @@ export default function AddEmployee() {
         last_name: "",
         email: ""
     }
+
     let navigate = useNavigate();
     const [data, setData] = useState(INITIAL_VALUE)
+    const validEmail = new RegExp('^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$');
+    const validInput= new RegExp('^[A-Za-z]+$');
+    const [emailErr, setEmailErr] = useState(false);
+    const [fnameErr, setFnameErr] = useState(false);
+    const [lnameErr, setLnameErr] = useState(false);
 
     const addEmployee = async (event) => {
         event.preventDefault()
+        if(!validInput.test(data.first_name)){
+            setFnameErr(true)
+        }
+        if(!validInput.test(data.last_name)){
+            setLnameErr(true)
+        }
+        if(validEmail.test(data.email)){
+          
         const inputEmp = {
             first_name: data.first_name,
             last_name: data.last_name,
@@ -25,6 +39,8 @@ export default function AddEmployee() {
         }
         axios.post('https://comp3123-assignment-101277841.herokuapp.com/employees/add', inputEmp)
             .then(res => navigate('/view'))
+    }
+    setEmailErr(true)
     }
 
     const onValueChanged = (event) => {
@@ -45,14 +61,17 @@ export default function AddEmployee() {
                             <Form>
                                 <Form.Group className="mb-3">
                                     <Form.Label>First Name</Form.Label>
+                                    {fnameErr && <a style={{ color: '#E32636', fontWeight: 'bold' }}> (Invalid format. Only letters allowed.)</a>}
                                     <Form.Control type="text" name='first_name' placeholder="Enter First Name" value={data.first_name} onChange={event => onValueChanged(event)} required />
                                 </Form.Group>
                                 <Form.Group className="mb-3">
                                     <Form.Label>Last Name</Form.Label>
+                                    {lnameErr && <a style={{ color: '#E32636', fontWeight: 'bold' }}> (Invalid format. Only letters allowed.)</a>}
                                     <Form.Control type="text" name='last_name' placeholder="Enter Last Name" value={data.last_name} onChange={event => onValueChanged(event)} required />
                                 </Form.Group>
                                 <Form.Group className="mb-3">
                                     <Form.Label>Email</Form.Label>
+                                    {emailErr && <a style={{ color: '#E32636', fontWeight: 'bold' }}> (Invalid format. Use example@domain.com)</a>}
                                     <Form.Control type="email" name='email' placeholder="Enter Email" value={data.email} onChange={(event) => onValueChanged(event)} required />
                                 </Form.Group>
                                 <Link to='/view'>

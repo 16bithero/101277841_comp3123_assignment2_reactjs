@@ -174,7 +174,7 @@ p, h2, h3 {
 /* Formats the body content */
 .divmid { /* Centers the content and encloses them in a box */
   width: 50%;
-  height: 75vh;
+  height: 80vh;
   margin: auto;
   border-radius: 40px;
   overflow: hidden; /* hides the scrollbar */
@@ -183,7 +183,7 @@ p, h2, h3 {
 }
 
 .inside { /* This div is inside divmid so the scrollbar won't overlap the outer box. */
-  height: 75vh;
+  height: 80vh;
   overflow: auto;
   background-image: linear-gradient(to top left, #ffffff, #edefff);
   background-size: cover;
@@ -208,8 +208,8 @@ p, h2, h3 {
 
 /* Hero caption in the webpage */
 .heroCap {
-  margin: auto;
   padding: 50px;
+  margin: auto;
   height: 15vh;
   background-color: #fefefe;
 }
@@ -288,12 +288,12 @@ img {
 
 input[type=text], input[type=email], select, option, input[type="password"]{
   width: 100%;
-  padding: 0.7em;
-  margin: 5px 0 10px 0;
+  padding: 0.6em;
+  margin: 5px 0 5px 0;
   display: inline-block;
   border: none;
   background: #f1f1f1;
-  border-radius: 1em;
+  border-radius: 0.5em;
 }
 
 label{
@@ -316,4 +316,10 @@ Button, input[type="submit"] {
 
 .color-nav {
   background-color: #3f4584;
+}
+
+.action_btn {
+  width: 200px;
+  margin: 0 auto;
+  display: inline-block;
 }

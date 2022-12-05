@@ -20,7 +20,7 @@ function App() {
         <Navbar className="color-nav" variant="dark" expand="lg">
           <Container>
             <Navbar.Brand href="#">Employee Management App</Navbar.Brand>
-            {location !== "/" ? (
+            {location !== "/" && location !== "/signup" && location !== "/login"? (
               <>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

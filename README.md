@@ -17,7 +17,7 @@
 ### Add Employee Screen
 <img src='https://github.com/16bithero/16bithero/blob/main/AddError.png'>
 
-You can use this project by:
+## You can use this project by:
 
 ### `By either forking this repository or download it as zip`
 

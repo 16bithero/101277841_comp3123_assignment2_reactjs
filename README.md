@@ -3,19 +3,19 @@
 
 # 📷 Screenshots
 ### 🏠 Home Screen
-<img src='https://github.com/16bithero/16bithero/blob/main/Home.png'>
+<img src='https://github.com/16bithero/16bithero/blob/main/Home.png' height=480 max-width=640>
 
 ### 🔑 Login Screen
-<img src='https://github.com/16bithero/16bithero/blob/main/LogIn.png'>
+<img src='https://github.com/16bithero/16bithero/blob/main/LogIn.png' height=480 max-width=640>
 
 ### ✍🏻 Sign Up Screen
-<img src='https://github.com/16bithero/16bithero/blob/main/SignUp.png'>
+<img src='https://github.com/16bithero/16bithero/blob/main/SignUp.png' height=480 max-width=640>
 
 ### 🧑🏻‍🔧 Employee Screen
-<img src='https://github.com/16bithero/16bithero/blob/main/Employees.png'>
+<img src='https://github.com/16bithero/16bithero/blob/main/Employees.png' height=480 max-width=640>
 
 ### 📝 Add Employee Screen
-<img src='https://github.com/16bithero/16bithero/blob/main/AddError.png'>
+<img src='https://github.com/16bithero/16bithero/blob/main/AddError.png' height=480 max-width=640>
 
 ## 💻 You can use this project by:
 
